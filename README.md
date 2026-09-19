@@ -2,7 +2,7 @@
 
 A production-oriented **Retrieval-Augmented Generation (RAG) chatbot** for querying a large private PDF knowledge base containing native text, scanned documents, tables, and images.
 
-The system extracts and preprocesses PDF content, performs OCR when required, creates semantic chunks, generates embeddings using an open-source embedding model, stores vectors in ChromaDB, retrieves the most relevant information, and generates grounded answers using **Llama 3.1 8B Instruct** with source/page citations.
+The system extracts and preprocesses PDF content, performs OCR when required, creates semantic chunks, generates embeddings using an open-source embedding model, stores vectors in ChromaDB, retrieves the most relevant information, and generates grounded answers using **Llama-3.2-1B-Instruct** with source/page citations.
 
 ---
 

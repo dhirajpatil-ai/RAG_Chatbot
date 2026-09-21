@@ -26,7 +26,7 @@ The system extracts and preprocesses PDF content, performs OCR when required, cr
 * Cosine similarity
 * Top-K semantic retrieval
 * Lightweight lexical + semantic reranking
-* Local Llama 3.1 8B Instruct generation
+* Local Llama 3.2 1B Instruct generation
 * 4-bit model quantization using bitsandbytes
 * Grounded RAG prompting
 * Source/page citations
@@ -80,7 +80,7 @@ The system extracts and preprocesses PDF content, performs OCR when required, cr
                     │                                 │
                     ▼                                 ▼
           ┌───────────────────┐             ┌───────────────────┐
-          │     ChromaDB      │             │ Llama 3.1 8B      │
+          │     ChromaDB      │             │ Llama 3.2 1B      │
           │ Persistent Vector │             │ Instruct 4-bit    │
           │      Store        │             └─────────┬─────────┘
           └───────────────────┘                       │
@@ -152,7 +152,7 @@ Semantic + Lexical Ranking
 Relevant Context
  │
  ▼
-Llama 3.1 8B Instruct
+Llama 3.2 1B Instruct
  │
  ▼
 Grounded Answer
@@ -177,7 +177,7 @@ Source/Page Citations
 | Vector Database        | ChromaDB                                 |
 | ANN Index              | HNSW                                     |
 | Similarity             | Cosine                                   |
-| LLM                    | `meta-llama/Llama-3.1-8B-Instruct`       |
+| LLM                    | `meta-llama/Llama-3.2-1B-Instruct`       |
 | Quantization           | bitsandbytes 4-bit                       |
 | Model Framework        | Hugging Face Transformers                |
 | Environment Management | python-dotenv                            |
@@ -301,7 +301,7 @@ pip install unstructured-inference
 The project uses:
 
 ```text
-meta-llama/Llama-3.1-8B-Instruct
+meta-llama/Llama-3.2-1B-Instruct
 ```
 
 Create a Hugging Face access token with access to the model.
@@ -426,7 +426,7 @@ The query vector is then compared against vectors stored in ChromaDB.
 ### Generation Model
 
 ```text
-meta-llama/Llama-3.1-8B-Instruct
+meta-llama/Llama-3.2-1B-Instruct
 ```
 
 The model generates the final response from the retrieved context.
@@ -436,7 +436,7 @@ Question
    +
 Retrieved Context
    ↓
-Llama 3.1 8B
+Llama 3.2 1B
    ↓
 Answer
 ```
@@ -584,7 +584,7 @@ Conceptually:
              Retrieved Evidence
                      │
                      ▼
-User Question ──► Llama 3.1
+User Question ──► Llama 3.2
                      │
                      ▼
              Grounded Response
@@ -751,7 +751,7 @@ Rank candidates
    ↓
 Construct context
    ↓
-Llama 3.1 8B
+Llama 3.2 1B
    ↓
 Answer with citations
 ```
@@ -873,7 +873,7 @@ Potential improvements include:
 
 ### Llama Model
 
-`meta-llama/Llama-3.1-8B-Instruct` requires appropriate access on Hugging Face.
+`meta-llama/Llama-3.2-1B-Instruct` requires appropriate access on Hugging Face.
 
 You must accept the applicable model terms and provide a valid Hugging Face token.
 
@@ -920,7 +920,7 @@ BGE Embeddings
 ChromaDB
 HNSW
 Hugging Face Transformers
-Llama 3.1 8B Instruct
+Llama 3.2 1B Instruct
 bitsandbytes
 ```
 
